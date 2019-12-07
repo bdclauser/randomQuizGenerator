@@ -75,11 +75,11 @@ for quizNum in range(35):
     for questionNum in range(50):
 
         # Get right and wrong answers.
-        correctAnswers = capitals[states[questionNum]]
+        correctAnswer = capitals[states[questionNum]]
         wrongAnswers = list(capitals.values())
-        del wrongAnswers[wrongAnswers.index(correctAnswers)]
+        del wrongAnswers[wrongAnswers.index(correctAnswer)]
         wrongAnswers = random.sample(wrongAnswers, 3)
-        answerOptions = wrongAnswers + [correctAnswers]
+        answerOptions = wrongAnswers + [correctAnswer]
         random.shuffle(answerOptions)
 
         # Write the questions and answer options to the quiz file.
@@ -90,6 +90,6 @@ for quizNum in range(35):
 
         # Write the answer key to the file.
         answerKeyFile.write('%s. %s\n' % (questionNum + 1, 'ABCD'[
-            answerOptions.index(correctAnswers)]))
+            answerOptions.index(correctAnswer)]))
     quizFile.close()
     answerKeyFile.close()
