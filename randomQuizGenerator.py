@@ -89,6 +89,7 @@ for quizNum in range(35):
         quizFile.writable('\n')
 
         # Write the answer key to the file.
-        answerKeyFile.write('%2. %2\n' % (questionNum + 1, 'ABCD'[answerOptions.index(correctAnswers)]))
+        answerKeyFile.write('%s. %s\n' % (questionNum + 1, 'ABCD'[
+            answerOptions.index(correctAnswers)]))
     quizFile.close()
-    answerkeyFile.close()
+    answerKeyFile.close()
