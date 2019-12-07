@@ -67,9 +67,21 @@ for quizNum in range(35):
     quizFile.write(' ' * 20) + 'State Capitals Quiz (Form %s)' % (quizNum + 1)
     quizFile.write('\n\n')
 
-    # TODO: Shuffle the order of the states.
+    # Shuffle the order of the states.
     states = list(capitals.keys())
     random.shuffle(states)
 
-    # TODO: Loop through all 50 states, making a queston for each.
-    
+    # Loop through all 50 states, making a queston for each.
+    for questionNum in range(50):
+
+        # Get right and wrong answers.
+        correctAnswers = capitals[states[questionNum]]
+        wrongAnswers = list(capitals.values())
+        del wrongAnswers[wrongAnswers.index(correctAnswers)]
+        wrongAnswers = random.sample(wrongAnswers, 3)
+        answerOptions = wrongAnswers + [correctAnswers]
+        random.shuffle(answerOptions)
+
+        # TODO: Write the questions and answer options to the quiz file.
+
+        # TODO: Write the answer key to the file.
