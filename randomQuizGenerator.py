@@ -60,7 +60,7 @@ capitals = {'Alabama': 'Montgomery',
 for quizNum in range(35):
     # Create the quiz and answer key files.
     quizFile = open('Captialsquiz%s.txt' % (quizNum + 1), 'w')
-    answerkeyFile = open('Capitalsquiz_answers%s.txt' % (quizNum + 1), 'w')
+    answerKeyFile = open('Capitalsquiz_answers%s.txt' % (quizNum + 1), 'w')
 
     # Write out the header for the quiz.
     quizFile.write('Name:\n\nDate:\n\nPeriod:\n\n')
@@ -88,4 +88,7 @@ for quizNum in range(35):
             quizFile.write(' %s. %s\n' % ('ABCD'[i], answerOptions[i]))
         quizFile.writable('\n')
 
-        # TODO: Write the answer key to the file.
+        # Write the answer key to the file.
+        answerKeyFile.write('%2. %2\n' % (questionNum + 1, 'ABCD'[answerOptions.index(correctAnswers)]))
+    quizFile.close()
+    answerkeyFile.close()
